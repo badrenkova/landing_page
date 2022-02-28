@@ -31,7 +31,7 @@ body {
 }
 
 .top {
-    height: 768px;
+    padding: 42px 0 0 0;
     background: linear-gradient(0deg, #EBF3FB 8.84%, rgba(152, 195, 232, 0) 31.12%);
 }
 
@@ -39,7 +39,6 @@ body {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
-    padding-top: 34px;
 }
 
 .top_box {
@@ -49,11 +48,14 @@ body {
 }
 
 .top_info {
+    min-height: 768px;
     padding-top: 107px;
     flex-grow: 1;
     background-image: url(images/illustration.png);
     background-repeat: no-repeat;
     background-position: right center;
+    box-sizing: border-box;
+    background-size: 44%;
 }
 
 .top_heading {
@@ -62,12 +64,12 @@ body {
     line-height: 74px;
     letter-spacing: 0.04em;
     color: #1F3F68;
-    width: 504px;
+    max-width: 510px;
 }
 
 .top_text {
     margin: 32px 0 71px 0;
-    width: 425px;
+    max-width: 425px;
 }
 
 .top_button {
@@ -102,7 +104,7 @@ body {
 }
 
 .card {
-    width: 359px;
+    max-width: 359px;
     box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
     border-radius: 10px;
     padding: 44px 32px;
@@ -130,19 +132,15 @@ body {
     line-height: 30px;
     letter-spacing: 0.05em;
     color: #5A98D0;
+    display: flex;
+}
+.card_a::after {
+    content: url('images/Vector.svg');
+    margin: 2px 0 0 14px;
 }
 
 .projects {
     padding: 64px 0 112px 0;
-}
-
-.projects_heading {
-    font-weight: 300;
-    font-size: 36px;
-    line-height: 46px;
-    text-align: center;
-    letter-spacing: 0.05em;
-    color: #000000;
 }
 
 .projects_p {
@@ -150,7 +148,7 @@ body {
     opacity: 1;
     text-align: center;
     margin: 32px auto 64px;
-    width: 750px;
+    max-width: 750px;
 }
 
 .project_parent {
@@ -211,14 +209,14 @@ body {
 .footer_heading {
     font-weight: normal;
     color: #FFFFFF;
-    margin: 32px;
+    margin: 0 0 32px 0;
     text-align: left;
-    width: 340.96px
+    max-width: 340.96px
 }
 
 .footer_p {
     color: #FFFFFF;
-    width: 494.77px;
+    max-width: 494.77px;
 }
 
 .footer_1_button {
@@ -230,7 +228,6 @@ body {
     opacity: 1;
     padding: 15px 80px;
     box-sizing: border-box;
-    height: 56px;
     line-height: normal;
     align-self:center;
     text-decoration: none;
@@ -250,14 +247,215 @@ body {
     width: 315px;
     opacity: 1;
 }
+.footer_2_list_item::before {
+    content: '2. ';
+    margin-right: 20px;
+    color: white;
+}
+.footer_2_list_item:first-child::before {
+    content: '1. ';
+    color: white;
+    margin-right: 20px;
+}
+.footer_2_list_item:last-child:before {
+    content: '3. ';
+    color: white;
+    margin-right: 20px;
+}
 
 .footer_2_list {
     display: flex;
     justify-content: space-between;
     margin-bottom: 64px;
+    list-style-type: none;
 }
 
 .copy {
     color: #FFFFFF;
     opacity: 0.4;
 }
+
+
+@media (max-width: 1024px) and (min-width: 668px) {
+    .container {
+        padding: 33px 32px 0;
+    }
+
+    .top_info {
+        min-height: 670px;
+        padding-top: 120px;
+        background-position: right 280px;
+    }
+    .what_we_do {
+        padding: 64px 32px 127px;
+    }
+    .card_box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        margin: 0 0 32px 0;
+    }
+    .card:last-child {
+        margin: 0;
+    }
+    .projects {
+        padding-bottom: 109px;
+    }
+    .footer_1 {
+        padding: 47px 0 64px 0;
+    }
+    .footer_1_button {
+        padding: 10px 45px;
+    }
+    .footer_p {
+        width: 336px;
+    }
+    .footer_2 {
+        padding: 64px 0;
+    }
+    .footer_2_list {
+        flex-direction: column;
+    }
+    .footer_2_list_item {
+        margin-bottom: 25px;
+        width: 100%;
+    }
+    .footer_2_list_item:last-child {
+        margin-bottom: 0;
+    }
+    .footer_2_list_item::before,
+    .footer_2_list_item:first-child::before,
+    .footer_2_list_item:last-child::before {
+        margin-right: 45px;
+    }
+    .footer_1,
+    .footer_2{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 667px) {
+    .heading {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .top_info {
+        padding-top: 33px;
+        background: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 376px;
+    }
+    .top_heading{
+        text-align: center;
+        font-size: 32px;
+        line-height: 37px;
+        width: 100%;
+    }
+    .top_text {
+        margin: 12px 0 32px 0;
+        text-align: center;
+        width: 100%;
+    }
+    .top{
+        padding: 24px 16px 41px;
+    }
+    .top_button {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 26px;
+        padding: 0 8px;
+    }
+    .what_we_do {
+        padding: 48px 0 64px;
+    }
+    .card_box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        margin: 0 0 32px 0;
+        width: 90%;
+    }
+    .card:last-child {
+        margin: 0;
+    }
+    .projects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 0 64px 0;
+    }
+    .projects_p {
+        margin-bottom: 82px;
+    }
+    .project_item {
+        width: 93%;
+        margin-bottom: 16px;
+    }
+    .project_parent > .project_item {
+        width: 100%;
+    }
+    .project_parent {
+        display: flex;
+        flex-direction: column;
+        width: 93%;
+    }
+
+    .smart_home_text {
+        top: 16px;
+        right: 16px;
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .project_parent {
+        margin: 0;
+    }
+    .project_item {
+        border-radius: 10px;
+    }
+    .projects_p {
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    .project_text {
+        font-size: 16px;
+        line-height: 19px;
+        top: 16px;
+        left: 16px;
+    }
+    .footer_1 {
+        flex-direction: column;
+        padding: 18px 0 41px 0;
+    }
+    .footer_1_button {
+        padding: 10px 35px;
+    }
+    .bottom {
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+    .footer_p {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .footer_heading {
+        text-align: center;
+        max-width: 258px;
+        margin: 0 auto 32px auto;
+    }
+    .footer_2 {
+        padding: 32px 0;
+    }
+    .footer_2_list {
+        flex-direction: column;
+        margin-bottom: 37px;
+    }
+    .footer_2_list_item:last-child {
+        margin-bottom: 0;
+    }
+
+} 
